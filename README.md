@@ -65,23 +65,46 @@ npm run build
 
 本专案内建 GitHub Actions 自动部署，推送到 `main` 分支即自动构建并发布。
 
-### 第一步：GitHub 仓库设置
+### 第一步：建立 GitHub 仓库
 
-1. 在 GitHub 上建立一个仓库（公开），将代码推送上去
-2. 进入仓库 **Settings → Pages**
-3. **Source** 选择 **GitHub Actions**
+1. 前往 [github.com/new](https://github.com/new) 建立新仓库
+2. 仓库名称填入 `quiz-arcade`（或你喜欢的名称）
+3. 选择 **Public**
+4. ⚠️ **不要勾选** "Add a README"、"Add .gitignore" 等初始化选项
+5. 点击 **Create repository**
 
-### 第二步：设置环境变量
+### 第二步：推送代码到 GitHub
+
+```bash
+# 初始化 Git（如果还没有的话）
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+
+# 关联远程仓库（替换为你的仓库地址）
+git remote add origin https://github.com/<你的用户名>/quiz-arcade.git
+
+# 推送代码
+git push -u origin main
+```
+
+### 第三步：配置 GitHub Pages
+
+1. 进入仓库 **Settings → Pages**
+2. **Source** 下拉菜单选择 **GitHub Actions**（不是 "Deploy from a branch"）
+
+### 第四步：设置环境变量
 
 进入仓库 **Settings → Secrets and variables → Actions**：
 
-**Secrets**（敏感信息，加密存储）：
+**Secrets**（点击 "New repository secret"）：
 
 | Name | Value | 说明 |
 |------|-------|------|
 | `VITE_GOOGLE_APP_SCRIPT_URL` | `https://script.google.com/macros/s/.../exec` | GAS Web App URL |
 
-**Variables**（非敏感设定，可选）：
+**Variables**（切换到 Variables 标签页，可选）：
 
 | Name | Default | 说明 |
 |------|---------|------|
@@ -90,24 +113,24 @@ npm run build
 
 > 💡 如果不设置 Variables，将自动使用默认值。
 
-### 第三步：触发部署
+### 第五步：触发部署
 
-推送代码到 `main` 分支即可自动触发：
+Secret 设好后，推送一次即可触发部署：
 
 ```bash
-git add .
-git commit -m "deploy: enable GitHub Pages"
+git commit --allow-empty -m "ci: trigger GitHub Pages deployment"
 git push origin main
 ```
 
 也可以在仓库 **Actions** 页面手动点击 **Run workflow** 触发。
 
-### 第四步：访问网站
+### 第六步：访问网站
 
-部署完成后，在 **Settings → Pages** 查看网站地址，格式为：
+1. 进入仓库 **Actions** 标签页，确认部署流程显示 ✅ 绿色通过
+2. 进入 **Settings → Pages** 查看网站地址，格式为：
 
 ```
-https://<你的用户名>.github.io/<仓库名>/
+https://<你的用户名>.github.io/quiz-arcade/
 ```
 
 ---
