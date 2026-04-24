@@ -1,0 +1,61 @@
+# Large binaries and downloaded release archives
+*.exe
+*.exe.bak
+*.zip
+*.7z
+*.rar
+!cli-proxy-api.exe
+!cloudflared.exe
+!CLIProxyAPI_6.9.34_windows_amd64.zip
+!_update_cli_proxy_6.9.34/cli-proxy-api.exe
+
+# Local-only handoff and sensitive account material
+_PRIVATE_HANDOFF_DO_NOT_GIT/
+auths_team/
+auths_free/
+_free_backup/
+secrets_vault/
+
+# Sensitive local configuration
+.claude.json
+config_team.yaml
+proxy_config.json
+v2/.env
+v2/data/cutover-mode.env
+v2/data/health_v2_restart_state.json
+
+# Runtime databases and state
+v2/data/*.sqlite
+v2/data/*.sqlite-*
+pool_state.json
+health_fail_count.tmp
+
+# Logs, debug output, and temporary files
+*.log
+*.tmp
+debug_*.txt
+test_var_out.txt
+*.resolved
+
+# Dependency and build output
+node_modules/
+package-lock.json
+dist/
+build/
+coverage/
+
+# Python/runtime caches
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# cli-proxy-api runtime directory
+cli-proxy-api/

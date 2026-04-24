@@ -1,0 +1,20 @@
+{
+  "name": "codex-pool-v2",
+  "version": "0.8.0-phase7",
+  "private": true,
+  "type": "module",
+  "description": "Phase 7 controlled cutover guardrails, canary mode controls, control plane, and parallel gateway for Codex pool V2.",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types src/index.ts",
+    "db:init": "node --experimental-strip-types src/scripts/init-db.ts",
+    "accounts:sync": "node --experimental-strip-types src/scripts/sync-accounts.ts",
+    "health:probe": "node --experimental-strip-types src/scripts/health-probe.ts",
+    "cutover:mode": "node --experimental-strip-types src/scripts/cutover-mode.ts",
+    "scheduler:shadow": "node --experimental-strip-types src/scripts/scheduler-shadow.ts",
+    "scheduler:feedback": "node --experimental-strip-types src/scripts/scheduler-feedback.ts",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  }
+}

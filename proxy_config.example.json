@@ -1,0 +1,26 @@
+{
+  "proxyPort": 8320,
+  "teamPoolHost": "localhost",
+  "teamPoolPort": 8317,
+  "teamPoolApiKey": "REPLACE_WITH_TEAM_POOL_API_KEY",
+  "acceptedApiKeys": ["REPLACE_WITH_CLIENT_API_KEY"],
+  "requestTimeout": 300000,
+  "targetModel": "gpt-5.5",
+  "modelMap": {
+    "best": "gpt-5.5",
+    "opus": "gpt-5.5",
+    "sonnet": "gpt-5.5",
+    "haiku": "gpt-5.5",
+    "claude-opus-4-7": "gpt-5.5",
+    "claude-opus-4-6": "gpt-5.5",
+    "claude-opus-4-6-20260320": "gpt-5.5",
+    "claude-opus-4-5": "gpt-5.5",
+    "claude-opus-4-5-20250514": "gpt-5.5",
+    "claude-sonnet-4-6": "gpt-5.5",
+    "claude-sonnet-4-6-20260320": "gpt-5.5",
+    "claude-sonnet-4-5": "gpt-5.5",
+    "claude-sonnet-4-5-20250514": "gpt-5.5",
+    "claude-haiku-4-5": "gpt-5.5",
+    "claude-haiku-4-5-20251001": "gpt-5.5"
+  }
+}

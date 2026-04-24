@@ -1,0 +1,14 @@
+host: ""
+port: 8317
+auth-dir: "./auths_team"
+api-keys:
+  - "REPLACE_WITH_TEAM_POOL_API_KEY"
+debug: true
+usage-statistics-enabled: true
+proxy-url: "http://127.0.0.1:7897"
+request-retry: 3
+routing:
+  strategy: "round-robin"
+remote-management:
+  allow-remote: true
+  secret-key: "REPLACE_WITH_REMOTE_MANAGEMENT_SECRET"

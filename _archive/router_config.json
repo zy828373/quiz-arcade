@@ -1,0 +1,12 @@
+{
+    "port": 8319,
+    "unifiedApiKey": "unified-api-key-1",
+    "pools": {
+        "team": {
+            "baseUrl": "http://localhost:8317",
+            "apiKey": "team-api-key-1"
+        }
+    },
+    "defaultPool": "team",
+    "requestTimeout": 120000
+}
