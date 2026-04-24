@@ -57,5 +57,5 @@ desktop.ini
 .vscode/
 .idea/
 
-# cli-proxy-api runtime directory
-cli-proxy-api/
+# cli-proxy-api runtime directory at the repository root.
+/cli-proxy-api/
